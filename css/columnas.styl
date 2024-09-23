@@ -1,0 +1,40 @@
+.cat-row, .maya-row{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.cat-row-nw, .maya-row-nw {
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+.cat-row-1, .maya-row-fullwide {
+  width: 100%;
+  height:auto;
+}
+
+.maya-box{
+  box-sizing: border-box;
+  }
+$maya-u = 12
+for col in $maya-u..1  
+  .maya-u-{col}
+    width (100% / $maya-u) * col
+
+$maya-row = 12
+for col in $maya-row..1  
+  .maya-row-{col}
+    width (100% / $maya-row) * col
+
+$boxpad = 100
+    for box in $boxpad..1  
+        .box-pad-{box}
+            padding (100% / $boxpad) * box
+
+@media (max-width: 1008px)
+
+    $maya-row-mv = 12
+
+    for col in $maya-row-mv..1  
+      .maya-row-mv-{col}
+        width (100% / $maya-row-mv) * col
